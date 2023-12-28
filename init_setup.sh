@@ -6,10 +6,8 @@ echo [$(date)]: "activate environment"
 source activate ./env
 echo [$(date)]: "install requirements"
 pip install -r requirements.txt
-# echo [$(date)]: "export conda environment"
-# conda env export > conda.yaml
-echo [$(date)]: "create an src/utils directory and files"
-mkdir -p src/utils && touch src/__init__.py src/main.py
-
+echo [$(date)]: "installing pytorch 1.8.1"
+pip install torch==2.0.0 --index-url https://download.pytorch.org/whl/cu118
+echo [$(date)]: "END"
 # to remove everything -
 # rm -rf env/ .gitignore conda.yaml README.md .git/
